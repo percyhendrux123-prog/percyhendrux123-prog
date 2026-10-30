@@ -17,7 +17,7 @@ What I care about in this work:
 | [escalation-desk](https://github.com/percyhendrux123-prog/escalation-desk) | The loop that answers when an agent gets stuck: watcher, leased dispatcher, fail-closed approval gate, evidence trail. |
 | [hermes-tripwire](https://github.com/percyhendrux123-prog/hermes-tripwire) | Logs every action an agent is refused and alerts the owner. It records what happened instead of asking the agent. |
 | [hermes-handydandy](https://github.com/percyhendrux123-prog/hermes-handydandy) | Session-size notices and structured handoffs, so long agent sessions end cleanly instead of degrading. |
-| [Axiom-deploy](https://github.com/percyhendrux123-prog/Axiom-deploy) | The Deploy Axiom website. Static, zero-cost, tested before every deploy. |
+| [Axiom-deploy](https://github.com/percyhendrux123-prog/Axiom-deploy) | The Deploy Axiom website. Static, zero-cost, with a test suite. |
 
 ## Stack
 
