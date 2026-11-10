@@ -1,4 +1,4 @@
-# Percy Keith
+# P. K. Stewart
 
 Forward-deployed AI engineer in Baton Rouge, Louisiana. I design and run multi-agent systems that do real work inside real businesses. Founder of [Deploy Axiom](https://deployaxiom.com). Anthropic certified.
 
@@ -17,6 +17,11 @@ What I care about in this work:
 | [escalation-desk](https://github.com/percyhendrux123-prog/escalation-desk) | The loop that answers when an agent gets stuck: watcher, leased dispatcher, fail-closed approval gate, evidence trail. |
 | [hermes-tripwire](https://github.com/percyhendrux123-prog/hermes-tripwire) | Logs every action an agent is refused and alerts the owner. It records what happened instead of asking the agent. |
 | [hermes-handydandy](https://github.com/percyhendrux123-prog/hermes-handydandy) | Session-size notices and structured handoffs, so long agent sessions end cleanly instead of degrading. |
+| [hermes-axioma](https://github.com/percyhendrux123-prog/hermes-axioma) | Inline signal color: the agent marks the few phrases that deserve a second look. An advisor, not a gate. |
+| [hermes-standing](https://github.com/percyhendrux123-prog/hermes-standing) | Earned trust for Hermes workers: independent proof checks, a local record, and level-based approval gates. |
+| [hermes-gatekeeper](https://github.com/percyhendrux123-prog/hermes-gatekeeper) | Outbound messages pass consent, STOP, quiet-hours, no-double-text and approved-wording checks before they send. |
+| [hermes-axiom-agent](https://github.com/percyhendrux123-prog/hermes-axiom-agent) | Adds the nine-article Axiom Doctrine and reports which enforcer plugins are enabled. It enforces nothing itself. |
+| [hermes-chiron](https://github.com/percyhendrux123-prog/hermes-chiron) | Reads how much you know about the topic in front of you from your own words, with no model call, and tells the agent how to talk to you. Anything risky still waits for a yes. |
 | [Axiom-deploy](https://github.com/percyhendrux123-prog/Axiom-deploy) | The Deploy Axiom website. Static, zero-cost, with a test suite. |
 
 ## Stack
