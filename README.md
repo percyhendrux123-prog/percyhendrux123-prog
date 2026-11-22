@@ -17,23 +17,58 @@ Dated numbers from work that is live, with client identities withheld: [deployax
 - **Evidence over claims.** A fix counts when there is proof it worked: an HTTP response, a delivered-message row, a screenshot. An agent saying "done" does not count.
 - **Plain-English handoffs.** Every task ends with a summary the owner can read on a phone.
 
-## Open source
+## The seat: a collection of Hermes plugins
+
+Most people run Hermes as it ships. I added a set of small plugins that work together, and you get a different agent. It takes the next step on its own, it stays quiet when there's nothing new, it remembers when you said no, and it shows its work. I call that a seat: an agent that holds a role on your team the way a person would, knowing its job, its limits and who it answers to.
+
+No one has to build this from scratch. It's here, free and public.
+
+### What each piece does
+
+Each plugin does one job. Together they cover the whole loop: watch, decide, act, prove, hand off.
+
+| Step | Plugin | What it does for you |
+|---|---|---|
+| Watch | [hermes-tripwire](https://github.com/percyhendrux123-prog/hermes-tripwire) | Every time the agent is told no, it writes it down and tells you. |
+| Watch | [hermes-run-receipts](https://github.com/percyhendrux123-prog/hermes-run-receipts) | Each scheduled job the agent runs leaves a receipt: what ran, which tools it used, which ones errored. |
+| Watch | [hermes-chiron](https://github.com/percyhendrux123-prog/hermes-chiron) | Watches how you talk, notices how much you already know, and tells the agent how to talk to you. |
+| Decide | [hermes-axioma](https://github.com/percyhendrux123-prog/hermes-axioma) | Marks the few phrases in a reply where your decision matters. |
+| Decide | [hermes-declines](https://github.com/percyhendrux123-prog/hermes-declines) | Remembers when you say no to a scheduled job, so it stops asking. |
+| Decide | [hermes-repeat-pause](https://github.com/percyhendrux123-prog/hermes-repeat-pause) | Same result three runs in a row, you hear it once. The job keeps running. |
+| Act | [hermes-gatekeeper](https://github.com/percyhendrux123-prog/hermes-gatekeeper) | Checks the messages it recognizes against your rules (consent, STOP, quiet hours, no double texts) before they send. Its README lists what it can't see. |
+| Act | [send-lock-kit](https://github.com/percyhendrux123-prog/send-lock-kit) | A send lock that refuses by default, the wall behind it, and a test that proves the lock alone isn't enough. |
+| Prove | [hermes-standing](https://github.com/percyhendrux123-prog/hermes-standing) | A task isn't done because the agent says so. It's done when a check passes. |
+| Hand off | [hermes-handydandy](https://github.com/percyhendrux123-prog/hermes-handydandy) | When a session gets long, it writes a handoff so the next one picks up where this one stopped. |
+| Hand off | [escalation-desk](https://github.com/percyhendrux123-prog/escalation-desk) | When an agent gets stuck, the problem goes to someone who can answer, and the answer comes back with proof. |
+| The rules | [hermes-axiom-agent](https://github.com/percyhendrux123-prog/hermes-axiom-agent) | Nine articles the agent works by, and a report of which plugins above are enforcing each one. |
+
+### How they serve each other
+
+Tripwire and run-receipts write down what happened. Axioma, declines and repeat-pause decide what's worth your attention. Gatekeeper and send-lock stand in front of anything that leaves the machine. Standing turns the record into trust, so a proven worker asks you less. HandyDandy and escalation-desk make sure nothing is dropped between sessions or when the agent is stuck. The Axiom Agent plugin names the rules and shows which ones are actually being enforced.
+
+Any one of them works alone. Together they're the whole seat.
+
+### What you see on day one
+
+- The agent's replies carry a few marked phrases where your decision matters.
+- A refused action shows up in a log, not buried in a chat.
+- A scheduled report that hasn't changed stops repeating itself.
+- A "no" stays a no.
+- A long chat ends with a handoff instead of a wall of context.
+
+### For builders
+
+The same collection in your vocabulary: proactivity with restraint. Observers (tripwire, run-receipts) record and never change what the agent does. Policies (gatekeeper, send-lock, declines) run before the tool call. Each README states whether it fails open or closed, and what it does not cover. Repeat-pause implements item 5 of the Hermes proactivity roadmap ([NousResearch/hermes-agent#158538](https://github.com/NousResearch/hermes-agent/issues/158538)); declines and run-receipts came out of the review on [#158289](https://github.com/NousResearch/hermes-agent/pull/158289).
+
+Install any plugin from its repo, or from the [Hermes Agent plugin catalog](https://github.com/NousResearch/hermes-agent/tree/main/plugin-catalog). Eight of these are in the catalog now, each merged by a maintainer. Repeat-pause, declines and run-receipts are under review.
+
+### Also built on Hermes
 
 | Repo | What it does |
 |---|---|
-| [escalation-desk](https://github.com/percyhendrux123-prog/escalation-desk) | The loop that answers when an agent gets stuck: watcher, leased dispatcher, fail-closed approval gate, evidence trail. |
-| [send-lock-kit](https://github.com/percyhendrux123-prog/send-lock-kit) | A default-deny send plugin, the container wall behind it, and the test that shows why the plugin alone is not enough. |
-| [hermes-gatekeeper](https://github.com/percyhendrux123-prog/hermes-gatekeeper) | Owner-configured policy checks on recognized outbound messaging calls. It does not inspect connector, MCP, browser or script sends. |
-| [hermes-tripwire](https://github.com/percyhendrux123-prog/hermes-tripwire) | Logs every action an agent is refused and alerts the owner. It records what happened instead of asking the agent. |
-| [hermes-axioma](https://github.com/percyhendrux123-prog/hermes-axioma) | Inline signal color: the agent marks the few phrases that deserve a second look. An advisor, not a gate. |
-| [hermes-standing](https://github.com/percyhendrux123-prog/hermes-standing) | Earned trust for Hermes workers: independent proof checks, a local record, and level-based approval gates. |
-| [hermes-handydandy](https://github.com/percyhendrux123-prog/hermes-handydandy) | Session-size notices and structured handoffs, so long agent sessions end cleanly. |
-| [hermes-axiom-agent](https://github.com/percyhendrux123-prog/hermes-axiom-agent) | Adds the nine-article Axiom Doctrine and reports which enforcer plugins are enabled. It enforces nothing itself. |
-| [hermes-chiron](https://github.com/percyhendrux123-prog/hermes-chiron) | Reads how much you know about the topic in front of you from your own words, with no model call, and tells the agent how to talk to you. |
+| [hermes-axiom-coach](https://github.com/percyhendrux123-prog/hermes-axiom-coach) | Connects Hermes to the open coach app and runs the Lite fitness calculators as local tools. |
 | [coachapp](https://github.com/percyhendrux123-prog/coachapp) | Open-source coaching app: programs, nutrition, check-ins and messaging for coaches and their clients. |
 | [Axiom-deploy](https://github.com/percyhendrux123-prog/Axiom-deploy) | The Deploy Axiom website. Static, with a test suite. |
-
-Several of the plugins above are listed in the [Hermes Agent plugin catalog](https://github.com/NousResearch/hermes-agent/tree/main/plugin-catalog), each merged by a maintainer.
 
 ## Training
 
