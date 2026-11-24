@@ -21,6 +21,8 @@ Dated numbers from work that is live, with client identities withheld: [deployax
 
 The whole story, with six weeks of numbers: [Leave it running](https://www.linkedin.com/pulse/leave-running-p-k-stewart-mycne/).
 
+One real job through the whole loop, in 67 seconds: [the seat, one real job](https://x.com/OfficialPercyK/status/2125020914676908241).
+
 Most people run Hermes as it ships. I added a set of small plugins that work together, and you get a different agent. It takes the next step on its own, it stays quiet when there's nothing new, it remembers when you said no, and it shows its work. I call that a seat: an agent that holds a role on your team the way a person would, knowing its job, its limits and who it answers to.
 
 No one has to build this from scratch. It's here, free and public.
