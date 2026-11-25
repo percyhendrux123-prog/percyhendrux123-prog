@@ -93,10 +93,6 @@ Twelve of these plugins are in the official Hermes Agent plugin catalog. Each on
 | [coachapp](https://github.com/percyhendrux123-prog/coachapp) | Open-source coaching app: programs, nutrition, check-ins and messaging for coaches and their clients. |
 | [Axiom-deploy](https://github.com/percyhendrux123-prog/Axiom-deploy) | The Deploy Axiom website. Static, with a test suite. |
 
-## Training
-
-Anthropic Academy: Claude 101, Claude Code 101, Introduction to Claude Cowork.
-
 ## Stack
 
 Python, Hermes Agent, Claude, MCP, SQLite, launchd, Netlify, Supabase, Stripe.
