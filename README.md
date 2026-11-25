@@ -64,7 +64,26 @@ Any one of them works alone. Together they're the whole seat.
 
 The same collection in your vocabulary: proactivity with restraint. Observers (tripwire, run-receipts) record and never change what the agent does. Policies (gatekeeper, send-lock, declines) run before the tool call. Each README states whether it fails open or closed, and what it does not cover. Repeat-pause implements item 5 of the Hermes proactivity roadmap ([NousResearch/hermes-agent#158538](https://github.com/NousResearch/hermes-agent/issues/158538)); declines and run-receipts came out of the review on [#158289](https://github.com/NousResearch/hermes-agent/pull/158289).
 
-Install any plugin from its repo, or from the [Hermes Agent plugin catalog](https://github.com/NousResearch/hermes-agent/tree/main/plugin-catalog). Eight of these are in the catalog now, each merged by a maintainer. Repeat-pause, declines and run-receipts are under review.
+Install any plugin from its repo, or from the [Hermes Agent plugin catalog](https://github.com/NousResearch/hermes-agent/tree/main/plugin-catalog).
+
+### Merged upstream
+
+Twelve of these plugins are in the official Hermes Agent plugin catalog. Each one went through a pull request to [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr+author%3Apercyhendrux123-prog+is%3Amerged) and was merged by a maintainer.
+
+| Repo | Catalog entry |
+|---|---|
+| [hermes-tripwire](https://github.com/percyhendrux123-prog/hermes-tripwire) | [tripwire](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/tripwire.yaml) |
+| [hermes-run-receipts](https://github.com/percyhendrux123-prog/hermes-run-receipts) | [run-receipts](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/run-receipts.yaml) |
+| [hermes-chiron](https://github.com/percyhendrux123-prog/hermes-chiron) | [chiron](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/chiron.yaml) |
+| [hermes-axioma](https://github.com/percyhendrux123-prog/hermes-axioma) | [hermes-axioma](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/hermes-axioma.yaml) |
+| [hermes-declines](https://github.com/percyhendrux123-prog/hermes-declines) | [hermes-declines](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/hermes-declines.yaml) |
+| [hermes-repeat-pause](https://github.com/percyhendrux123-prog/hermes-repeat-pause) | [repeat-pause](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/repeat-pause.yaml) |
+| [hermes-gatekeeper](https://github.com/percyhendrux123-prog/hermes-gatekeeper) | [hermes-gatekeeper](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/hermes-gatekeeper.yaml) |
+| [send-lock-kit](https://github.com/percyhendrux123-prog/send-lock-kit) | [send-lock](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/send-lock.yaml) |
+| [hermes-standing](https://github.com/percyhendrux123-prog/hermes-standing) | [hermes-standing](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/hermes-standing.yaml) |
+| [hermes-handydandy](https://github.com/percyhendrux123-prog/hermes-handydandy) | [handydandy](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/handydandy.yaml) |
+| [hermes-axiom-agent](https://github.com/percyhendrux123-prog/hermes-axiom-agent) | [hermes-axiom-agent](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/hermes-axiom-agent.yaml) |
+| [hermes-axiom-coach](https://github.com/percyhendrux123-prog/hermes-axiom-coach) | [hermes-axiom-coach](https://github.com/NousResearch/hermes-agent/blob/main/plugin-catalog/hermes-axiom-coach.yaml) |
 
 ### Also built on Hermes
 
