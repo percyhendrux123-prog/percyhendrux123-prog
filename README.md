@@ -10,7 +10,7 @@ Dated numbers from work that is live, with client identities withheld: [deployax
 
 - An independent insurance agency went from no contact after the sale to live client care in 7 days.
 - When a client's agent got stuck during a video call, the escalation loop opened and closed the ticket in 4 minutes. That evening is replayed in [escalation-desk](https://github.com/percyhendrux123-prog/escalation-desk).
-- In a container test, an agent was made to attempt 46 send, publish, exfiltrate and tamper actions. The send-lock plugin stopped 32; the container wall stopped the other 14, and with the plugin off the wall alone stopped all 46. 0 reached the outside. Evidence in [send-lock-kit](https://github.com/percyhendrux123-prog/send-lock-kit).
+- In a wall test against fake services, an agent was made to attempt 46 send, publish, exfiltrate and tamper actions. The send-lock plugin refused 32; the other 14 got past the plugin and none reached the outside. With the plugin off, all 46 ran against the wall alone with 0 outside effects. Evidence in [send-lock-kit](https://github.com/percyhendrux123-prog/send-lock-kit).
 
 ## What I care about in this work
 
